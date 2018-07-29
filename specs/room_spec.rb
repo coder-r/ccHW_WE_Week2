@@ -33,19 +33,14 @@ class TestRoom < MiniTest::Test
 
   def test_check_in_guest_room_full
     waqas = Guest.new("Mr Waqas", 25, 90)
-    # room full - 2 guests
     @room.check_in_guest(@guests)
-    # try to check in one too many guests
     check_in_fail = @room.check_in_guest(waqas)
-    # ensure we dont't add the extra guest
     assert_equal(2, @room.guests.length)
-    # check we return false when we can't add a guest
     assert_equal(false, check_in_fail)
 
   end
 
   def test_checks_guest_has_enough_funds
-    #check enough money in wallet
     @waqas = Guest.new("Mr Waqas", 25, 90)
     cant_check_in = @room.check_in_guest(@waqas)
 
