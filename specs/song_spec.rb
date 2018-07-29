@@ -1,6 +1,6 @@
 require("minitest/autorun")
 require("minitest/rg")
-require relative("../song.rb")
+require_relative("../song.rb")
 
 class TestSong < MiniTest::Test
 
@@ -11,9 +11,10 @@ class TestSong < MiniTest::Test
   end
 
   def test_name
-    assert_equal("In My Feelings", @song.name)
+    assert_equal("In My Feelings", @song.song_name)
   end
 
   def test_artist
-    assert_equal("Drake", @song.artist)
+    assert_equal("Drake", @song.song_artist)
   end
+end
